@@ -60,6 +60,7 @@ namespace tc_trn
 
         static uint addr_badge = 0x006D5654;
         static uint addr_karma = 0x006D5658;
+        static uint addr_karma2 = 0x006D565C;
 
         static uint addr_noclip = 0x00401A5D;
         static uint addr_noclip2 = 0x00504B2D;
@@ -94,12 +95,14 @@ namespace tc_trn
                 new HotKey(Keys.Shift, Keys.L, Cheat_FlyDown, "NoClip Down") { fly = true },
                 new HotKey(Keys.Shift, Keys.U, Cheat_FlySpeedAdd, "Increase NoClip Speed"),
                 new HotKey(Keys.Shift, Keys.J, Cheat_FlySpeedSub, "Decrease NoClip Speed"),
-                new HotKey(Keys.Alt, Keys.D1, Cheat_AddKarma, "Add Karma"),
+                //Something still corrects it back
+                /*new HotKey(Keys.Alt, Keys.D1, Cheat_AddKarma, "Add Karma"),
                 new HotKey(Keys.Alt, Keys.D2, Cheat_AddKarma10, "Add 10 Karma"),
-                new HotKey(Keys.Alt, Keys.D3, Cheat_SubKarma, "Sub Karma"),
-                new HotKey(Keys.Alt, Keys.D4, Cheat_AddBadge, "Add Badge"),
+                new HotKey(Keys.Alt, Keys.D3, Cheat_SubKarma, "Sub Karma"),*/
+                //HUD gets into a loop after getting or losing badge
+                /*new HotKey(Keys.Alt, Keys.D4, Cheat_AddBadge, "Add Badge"),
                 new HotKey(Keys.Alt, Keys.D5, Cheat_AddBadge10, "Add 10 Badge"),
-                new HotKey(Keys.Alt, Keys.D6, Cheat_SubBadge, "Sub Badge"),
+                new HotKey(Keys.Alt, Keys.D6, Cheat_SubBadge, "Sub Badge"),*/
                 new HotKey(Keys.Alt, Keys.D7, Cheat_Health, "Full Health"),
                 new HotKey(Keys.Alt, Keys.D8, Cheat_Health, "Infinite Health") { toggle = true },
                 new HotKey(Keys.Alt, Keys.D9, Cheat_Ammo, "Full Ammo"),
@@ -425,21 +428,22 @@ namespace tc_trn
 
         private void Cheat_Karma(int input)
         {
-            int tmp = (int)mem.ReadByte(addr_karma) + input;
+            int tmp = (int)mem.Read(addr_karma) + input;
             byte[] data = BitConverter.GetBytes(tmp);
-            mem.WriteBytes(addr_karma, data, 0x4);
+            mem.WriteBytes(addr_karma, data, 4);
+            mem.WriteBytes(addr_karma2, data, 4);
         }
 
         private void Cheat_Badge(int input)
         {
-            int tmp = (int)mem.ReadByte(addr_badge) + input;
+            int tmp = (int)mem.Read(addr_badge) + input;
             byte[] data = BitConverter.GetBytes(tmp);
-            mem.WriteBytes(addr_badge, data, 0x4);
+            mem.WriteBytes(addr_badge, data, 4);
         }
 
         private void Cheat_Health()
         {
-            mem.WriteBytes(addr_player + offs_health, Constants.BYTES_100, 0x4);
+            mem.WriteBytes(addr_player + offs_health, Constants.BYTES_100, 4);
         }
 
         private void Cheat_Ammo()
@@ -448,13 +452,13 @@ namespace tc_trn
             uint tmp = mem.Read(addr);
             byte[] data = BitConverter.GetBytes(tmp);
             addr += 0x4;
-            mem.WriteBytes(addr, data, 0x4);
+            mem.WriteBytes(addr, data, 4);
             //
             addr = addr_player + offs_ammo_l;
             tmp = mem.Read(addr);
             data = BitConverter.GetBytes(tmp);
             addr += 0x4;
-            mem.WriteBytes(addr, data, 0x4);
+            mem.WriteBytes(addr, data, 4);
         }
 
         private void Cheat_SavePos()

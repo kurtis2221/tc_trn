@@ -64,7 +64,7 @@
             this.bt_start.Location = new System.Drawing.Point(12, 403);
             this.bt_start.Name = "bt_start";
             this.bt_start.Size = new System.Drawing.Size(128, 32);
-            this.bt_start.TabIndex = 1;
+            this.bt_start.TabIndex = 7;
             this.bt_start.Text = "Start Game";
             this.bt_start.UseVisualStyleBackColor = true;
             this.bt_start.Click += new System.EventHandler(this.bt_start_Click);
@@ -74,7 +74,7 @@
             this.bt_about.Location = new System.Drawing.Point(490, 403);
             this.bt_about.Name = "bt_about";
             this.bt_about.Size = new System.Drawing.Size(128, 32);
-            this.bt_about.TabIndex = 1;
+            this.bt_about.TabIndex = 9;
             this.bt_about.Text = "About";
             this.bt_about.UseVisualStyleBackColor = true;
             this.bt_about.Click += new System.EventHandler(this.bt_about_Click);
@@ -119,7 +119,7 @@
             0});
             this.nm_interv.Name = "nm_interv";
             this.nm_interv.Size = new System.Drawing.Size(74, 26);
-            this.nm_interv.TabIndex = 4;
+            this.nm_interv.TabIndex = 0;
             this.nm_interv.Value = new decimal(new int[] {
             10,
             0,
@@ -142,7 +142,7 @@
             0});
             this.nm_flyspeed.Name = "nm_flyspeed";
             this.nm_flyspeed.Size = new System.Drawing.Size(74, 26);
-            this.nm_flyspeed.TabIndex = 4;
+            this.nm_flyspeed.TabIndex = 1;
             this.nm_flyspeed.Value = new decimal(new int[] {
             1,
             0,
@@ -173,7 +173,7 @@
             this.bt_tele_add.Location = new System.Drawing.Point(443, 250);
             this.bt_tele_add.Name = "bt_tele_add";
             this.bt_tele_add.Size = new System.Drawing.Size(50, 32);
-            this.bt_tele_add.TabIndex = 6;
+            this.bt_tele_add.TabIndex = 3;
             this.bt_tele_add.Text = "Add";
             this.bt_tele_add.UseVisualStyleBackColor = true;
             this.bt_tele_add.Click += new System.EventHandler(this.bt_tele_add_Click);
@@ -183,7 +183,7 @@
             this.bt_tele_del.Location = new System.Drawing.Point(568, 250);
             this.bt_tele_del.Name = "bt_tele_del";
             this.bt_tele_del.Size = new System.Drawing.Size(50, 32);
-            this.bt_tele_del.TabIndex = 6;
+            this.bt_tele_del.TabIndex = 5;
             this.bt_tele_del.Text = "Del";
             this.bt_tele_del.UseVisualStyleBackColor = true;
             this.bt_tele_del.Click += new System.EventHandler(this.bt_tele_del_Click);
@@ -201,7 +201,7 @@
             this.bt_tele_upd.Location = new System.Drawing.Point(506, 250);
             this.bt_tele_upd.Name = "bt_tele_upd";
             this.bt_tele_upd.Size = new System.Drawing.Size(50, 32);
-            this.bt_tele_upd.TabIndex = 6;
+            this.bt_tele_upd.TabIndex = 4;
             this.bt_tele_upd.Text = "Upd";
             this.bt_tele_upd.UseVisualStyleBackColor = true;
             this.bt_tele_upd.Click += new System.EventHandler(this.bt_tele_upd_Click);
@@ -211,7 +211,7 @@
             this.tb_tele_name.Location = new System.Drawing.Point(443, 288);
             this.tb_tele_name.Name = "tb_tele_name";
             this.tb_tele_name.Size = new System.Drawing.Size(175, 26);
-            this.tb_tele_name.TabIndex = 8;
+            this.tb_tele_name.TabIndex = 6;
             this.tb_tele_name.Text = "Untitled";
             this.tb_tele_name.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_tele_name_KeyPress);
             // 
@@ -220,7 +220,7 @@
             this.button1.Location = new System.Drawing.Point(356, 403);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(128, 32);
-            this.button1.TabIndex = 1;
+            this.button1.TabIndex = 8;
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.bt_save_Click);
